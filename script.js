@@ -12,6 +12,7 @@ const promise2 = createrandomPromise('Promise 2');
 const promise3 = createrandomPromise('Promise 3');
 
 Promise.all([promise1,promise2,promise3]).then((results)=>{
+	document.getElementById('loading').remove();
 	const totalTime = results.reduce((total,result) => total + parseFloat(result.takentime),0).toFixed(3);
 	const tableBody = document.getElementById('output');
 
