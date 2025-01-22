@@ -7,11 +7,11 @@ function createrandomPromise(names) {
 	});
 }
 
-const promise1 = createrandomPromise('Promise 1');
-const promise2 = createrandomPromise('Promise 2');
-const promise3 = createrandomPromise('Promise 3');
+const promise - 1 = createrandomPromise('Promise - 1');
+const promise - 2 = createrandomPromise('Promise - 2');
+const promise - 3 = createrandomPromise('Promise - 3');
 
-Promise.all([promise1,promise2,promise3]).then((results)=>{
+Promise.all([promise - 1,promise - 2,promise - 3]).then((results)=>{
 	document.getElementById('loading').remove();
 	const totalTime = results.reduce((total,result) => total + parseFloat(result.takentime),0).toFixed(3);
 	const tableBody = document.getElementById('output');
