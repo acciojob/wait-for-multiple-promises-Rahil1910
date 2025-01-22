@@ -1,15 +1,15 @@
-function createrandomPromise(names) {
+function createrandomPromise(name) {
 	const takentime = (Math.random() *2+1).toFixed(3);
 	return new Promise(resolve =>{
 		setTimeout(()=>{
-			resolve({names,takentime});
+			resolve({name,takentime});
 		},takentime*1000);
 	});
 }
 
-const promise1= createrandomPromise('Promise - 1');
-const promise2 = createrandomPromise('Promise - 2');
-const promise3 = createrandomPromise('Promise - 3');
+const promise1= createrandomPromise('Promise 1');
+const promise2 = createrandomPromise('Promise 2');
+const promise3 = createrandomPromise('Promise 3');
 
 Promise.all([promise1,promise2,promise3]).then((results)=>{
 	document.getElementById('loading').remove();
@@ -18,12 +18,11 @@ Promise.all([promise1,promise2,promise3]).then((results)=>{
 
     results.forEach(result => {
         const row = document.createElement("tr");
-        row.innerHTML = `<td>${result.names}</td><td>${result.takentime}</td>`;
+        row.innerHTML = `<td>${result.name}</td><td>${result.takentime}</td>`;
         tableBody.appendChild(row);
     });
 
     const totalRow = document.createElement("tr");
     totalRow.innerHTML = `<td>Total</td><td>${totalTime}</td>`;
     tableBody.appendChild(totalRow);
-
 });
