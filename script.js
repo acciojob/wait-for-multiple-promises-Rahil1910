@@ -1,5 +1,5 @@
 function createrandomPromise(name) {
-	const takentime = (Math.random() *2+1).toFixed(3);
+	const takentime = (Math.random() *1+1).toFixed(3);
 	return new Promise(resolve =>{
 		setTimeout(()=>{
 			resolve({name,takentime});
